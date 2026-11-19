@@ -132,3 +132,32 @@ const resultado2 = buscarProducto(3);
 console.log(resultado2);
 
 // Crear funcion filtrarPorCategoria(categoria)
+const filtrarPorCategoria = (categoria) => {
+    return productos.filter(producto => producto.categoria === categoria);
+};
+
+
+const hayAgotados = productos.some(producto => producto.stock === 0);
+
+const hayPrecioMayorMillon = productos.some(
+    producto => producto.precio > 1000000
+);
+
+const preciosValidos = productos.every(
+    producto => producto.precio > 0
+);
+
+const stockValido = productos.every(
+    producto => producto.stock >= 0
+);
+
+const valorInventario = productos.reduce(
+    (total, producto) => total + producto.precio * producto.stock,
+    0
+);
+
+console.log("¿Existe algún producto agotado?", hayAgotados);
+console.log("¿Existe algún producto con precio mayor a $1.000.000?", hayPrecioMayorMillon);
+console.log("¿Todos los productos tienen precio mayor que cero?", preciosValidos);
+console.log("¿Todos los productos tienen stock mayor o igual que cero?", stockValido);
+console.log("Valor total del inventario: $", valorInventario);
