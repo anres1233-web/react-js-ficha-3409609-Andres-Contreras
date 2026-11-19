@@ -130,3 +130,5 @@ const buscarProducto = (id) => {
 
 const resultado2 = buscarProducto(3);
 console.log(resultado2);
+
+// Crear funcion filtrarPorCategoria(categoria)
