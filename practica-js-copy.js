@@ -1,7 +1,5 @@
 console.log("JavaScript listo para practicar");
 
-//Agregar productos
-
 const productos = [
 { id: 1, nombre: 'Mouse', precio: 50000, categoria: 'Perifericos', stock: 5 },
 { id: 2, nombre: 'Teclado', precio: 90000, categoria: 'Perifericos', stock: 0 },
@@ -15,3 +13,15 @@ const productos = [
 { id: 10, nombre: 'Memoria RAM', precio: 150000, categoria: 'Almacenamiento', stock: 2}
 ];
 
+console.log(`El producto ${productos[0].nombre} cuesta $${productos[0].precio}`);
+
+const { nombre, precio, stock } = productos[0];
+console.log(nombre, precio, stock);
+
+const productoActualizado = {
+...productos[0],
+stock: 8
+};
+
+const estado = productoActualizado.stock > 0 ? 'Disponible' : 'Agotado';
+console.log(estado);

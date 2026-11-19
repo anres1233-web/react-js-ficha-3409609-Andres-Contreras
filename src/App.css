@@ -1,17 +1,146 @@
+
+/* ===== CONFIGURACIÓN GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
 .contenedor {
-max-width: 1100px;
-margin: 0 auto;
-padding: 24px;
-font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 40px 30px;
 }
+
+/* ===== ENCABEZADO ===== */
+.contenedor h1 {
+  background: linear-gradient(135deg, #0f172a, #312e81);
+  color: white;
+  padding: 45px 30px;
+  border-radius: 18px;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+/* ===== INFORMACIÓN DEL INVENTARIO ===== */
+.contenedor > p {
+  display: inline-block;
+  background: white;
+  padding: 22px 28px;
+  margin: 0 15px 30px 0;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #334155;
+  border-left: 5px solid #6366f1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== GRID DE PRODUCTOS ===== */
 .productos {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
+
+/* ===== TARJETAS DE PRODUCTOS ===== */
 .producto-card {
-border: 1px solid #ddd;
-border-radius: 10px;
-padding: 16px;
-background: white;
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.15);
+  border-color: #818cf8;
+}
+
+/* ===== TÍTULOS ===== */
+.producto-card h2 {
+  font-size: 21px;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+/* ===== TEXTOS ===== */
+.producto-card p {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ===== PRECIOS ===== */
+.producto-card .precio {
+  color: #4f46e5;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+/* ===== DISPONIBILIDAD ===== */
+.producto-card .disponible {
+  display: inline-block;
+  background: #dcfce7;
+  color: #15803d;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.producto-card .agotado {
+  display: inline-block;
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 20px 15px;
+  }
+
+  .contenedor h1 {
+    font-size: 28px;
+    padding: 30px 15px;
+  }
+
+  .contenedor > p {
+    display: block;
+    margin-right: 0;
+  }
+
+  .productos {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor h1 {
+    font-size: 24px;
+  }
+
+  .productos {
+    grid-template-columns: 1fr;
+  }
 }
