@@ -161,3 +161,16 @@ console.log("¿Existe algún producto con precio mayor a $1.000.000?", hayPrecio
 console.log("¿Todos los productos tienen precio mayor que cero?", preciosValidos);
 console.log("¿Todos los productos tienen stock mayor o igual que cero?", stockValido);
 console.log("Valor total del inventario: $", valorInventario);
+
+console.log(`El producto ${productos[0].nombre} cuesta $${productos[0].precio}`);
+
+const { nombre, precio, stock } = productos[0];
+console.log(nombre, precio, stock);
+
+const productoActualizado = {
+...productos[0],
+stock: 8
+};
+
+const estado = productoActualizado.stock > 0 ? 'Disponible' : 'Agotado';
+console.log(estado);
